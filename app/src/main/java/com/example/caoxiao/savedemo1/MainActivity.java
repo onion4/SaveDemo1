@@ -1,10 +1,13 @@
 package com.example.caoxiao.savedemo1;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -12,12 +15,21 @@ public class MainActivity extends ActionBarActivity {
     private String string = "null";
     private String string2 = "null2";
     private TextView textView;
+    private Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = (TextView)findViewById(R.id.textView);
+        btn = (Button)findViewById(R.id.btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Activity2.class);
+                startActivity(intent);
+            }
+        });
         if(savedInstanceState!=null) {
             string2 = savedInstanceState.getString("save2");
             textView.setText(string2);
