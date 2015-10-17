@@ -90,7 +90,7 @@ public class MainActivity extends ActionBarActivity {
         Log.i("onRestore",string);
         Log.i("onRestoreInstanceState","onRestoreInstanceState");
     }
-
+//
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
